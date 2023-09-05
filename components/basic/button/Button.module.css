@@ -1,0 +1,216 @@
+.base {
+    border: none;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5px; 
+    font-family: 'Montserrat';
+    padding: 12px;
+}
+
+.emptyBase {
+    border: none;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    background-image: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.small {
+    border: none;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    background-image: none;
+    background-color: transparent;
+    color: var(--color-alternate);
+}
+
+.emptyBaseSecondary {
+    border: none;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    justify-content: center;
+    background: none;
+    background-image: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.toggle{
+    background-color: rgba(0, 184, 185, 0.03);
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.notification {
+    box-shadow: var(--box-shadow-primary);
+    background-image: var(--bg-image-primary);
+    transition: background-image 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.upload{
+    color: var(--color-primary-inverse);
+    background-image: var(--bg-image-primary-inverse); 
+    box-shadow: var(--box-shadow-primary-inverse);
+    transition: background-image 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+.sub {
+    height: 36px;
+    padding: 6px 16px;
+    border-radius: 12px;
+    background-image: var(--bg-image-primary-inverse); 
+    color: var(--color-primary);
+    text-align: center;
+    color: var(--color-primary-inverse);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.71;
+    transition: background-image 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+.outlined {
+    height: 48px;  
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: var(--border-primary);
+    font-family: 'Gilroy';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--color-primary);
+    transition: color 0.3s ease-in-out;
+}
+
+.dark{
+    color: var(--color-primary);
+    background-image: var(--bg-image-primary);
+    transition: color 0.3s ease-in-out;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.gradient{
+    box-shadow: 0 8px 8px -4px rgb(69, 121, 245, 0.12), 0 16px 24px 0 rgb(69, 121, 245, 0.24), 0 2px 4px -1px rgb(27, 10, 82, 0.12), 0 0 1px 0 rgb(69, 121, 245, 0.24);        
+}
+
+.blueToPurple{
+    color: white;
+    background-image: linear-gradient(116deg, #00bbff, #9c42f5 53%, #5d2de1 100%)
+}
+
+.greenToPurple{
+    color: white;
+    background-image: linear-gradient(116deg, #00ffaa, #4579f5 53%, #9c42f5 100%)
+}
+
+.orangeToPink{
+    color: white;
+    background-image: linear-gradient(103deg, #ff5e00, #f54562 54%, #c32de1);
+}
+
+.subscribe-btn {
+    background-color: rgba(0, 148, 185, 0.06);
+    border: solid 2px #00b8b9;
+}
+
+.google {
+    background-color: #4285f4;
+    white-space: nowrap;
+}
+
+.facebook {
+background-color: #1877f2;
+}
+
+.twitter {
+background-color: #1da1f2;
+}
+
+.discord {
+background-color: #7289da;
+}
+
+
+.iconMargin{
+    margin-right: 12px;
+}
+
+.iconOpacity{
+    opacity: 0.6;
+  }
+
+.social{
+    border: none;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5px; 
+    font-family: 'Montserrat';
+    padding: 12px 36px;
+    color: white;
+    width: 100%;
+}
+
+
+@media only screen 
+  and (max-width: 768px) { 
+    
+    .social{
+        border: none;
+        height: 48px;
+        min-width: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1.5px; 
+        font-family: 'Montserrat';
+        padding: 12px;
+        color: white;
+        margin-right: 1px !important
+    }
+
+    .iconMargin{
+        margin-right: 6px;
+    }
+
+    .buttonRightMargin{
+        margin-right: 6px;
+    }
+
+}

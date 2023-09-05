@@ -1,0 +1,42 @@
+.layout{
+    width: 100vw;
+    max-height: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.home{
+    background-image: var(--background-image-home);
+    transition: background-image 0.3s ease-in-out;
+}
+
+.playlist{
+    background-image: var(--background-image-playlist);
+    transition: background-image 0.3s ease-in-out;
+}
+
+.signup{
+    background-image: var(--background-image-signup);
+    transition: background-image 0.3s ease-in-out;
+}
+
+.signin {
+    background-image: var(--background-image-signin);
+    transition: background-image 0.3s ease-in-out;
+}
+
+.signout{
+    background-image: var(--background-image-signout);
+    transition: background-image 0.3s ease-in-out;
+}
+
+@media only screen 
+  and (max-width: 768px) { 
+    .layout{
+        overflow-x: hidden;
+    }
+
+}

@@ -1,0 +1,245 @@
+.containerGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 300px calc(100vh - 170px);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.containerGridMobile {
+    max-height: 100vh;
+    overflow-x: hidden;
+}
+
+.uploadModal{
+    grid-area: 1 / 1 / 4 / 4;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.637);
+    height: 100vh;
+}
+
+.topLeft {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* align-items: center; */
+    margin: 0 48px;
+}
+
+.topCenter{
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topRight{
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bottomLeft   { 
+    grid-area: 2 / 1 / 3 / 2;
+    padding: 24px 24px 24px;
+    color: var(--color-primary);
+    overflow: auto;
+}
+
+.bottomRight   { 
+    grid-area: 2 / 3 / 3 / 4;
+    padding: 0 48px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.bottomCenter {
+    grid-area: 2 / 2 / 3 / 3;
+    position: relative;
+}
+
+.scrollFeedContainer{
+    height: calc(100% - 48px);
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 120px;
+}
+
+.navbarBrand {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.playlistHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 32px;
+}
+
+.profileCover{
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    padding: 100px 24px 24px;
+}
+
+.profileCoverImage {
+    position:absolute;
+    top: 0;
+    left: 0;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: 50% 0%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.profileImage {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border: 4px solid #181c23;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.profileCoverBodyHeader {
+    margin-bottom: 30px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.profileNameContainer {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 15px;
+    min-width: 172px;
+}
+
+.profileName {
+    height: 28px;  
+    font-size: 17.5px;
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    color: var(--color-primary);
+}
+
+.profileUsername {
+    height: 24px;  
+    font-size: 14px;
+    color: var(--color-subtitle);
+    margin-bottom: 28px;
+}
+
+.profileCoverBody {
+    padding: 24px 0;
+}
+
+.profileCoverText {
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.71;
+    color: var(--color-subtitle);
+}
+
+.subHeader {
+    width: 100%;
+    height: 28px;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    color: var(--color-primary);
+    margin-bottom: 24px;
+}
+
+.dropdownToggle {
+    font-family: Gilroy;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 700;
+    background-color: transparent !important;
+    border-color: transparent;
+    padding: 0 4px;
+    color: var(--color-primary);
+}
+
+.tokenSection {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 48px;
+    list-style: none;
+    padding: 0;
+}
+
+.tokenItem {
+    width: 64px;
+    height: 78px;
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    margin-right:12px;
+}
+.tokenItem:last-of-type {
+    margin-right: unset;
+}
+.tokenImage {
+    width: 56px;
+    height: 56px;
+    margin: 0 0 2px;
+    border-radius: 12px;
+    border: 4px solid #212429;
+    box-sizing: content-box;
+}
+.tokenItemText {
+    text-align: center;
+    font-size: 10px;
+    color: var(--color-primary);
+    line-height: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+}
+
+.mobileNavBackground{
+    background-image: var(--bg-image-primary);
+    position: absolute;
+    top: 0;
+}
+
+.mobileNav{
+    margin: 24px 24px 0;
+}
+
+
+@media only screen 
+  and (max-width: 768px) { 
+    .playlistHeader {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .scrollFeedContainer{
+        padding-top: 144px;
+    }
+}
+
+

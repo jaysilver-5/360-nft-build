@@ -1,0 +1,217 @@
+.cardContainer {
+    margin-bottom: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: var(--box-shadow-primary);
+    background-image: var(--bg-image-primary);
+    transition: background-image 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.metaContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.playlistArt {
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
+    margin-right: 24px;
+    object-fit: contain;
+}
+
+.metaText {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.topRowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+    margin-bottom: 8px;
+}
+
+.badge {
+    height: 24px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 18px;
+    font-weight: 700;
+    font-size: 14px;
+}
+.badgePlaylist {
+    background-color: #00b8b9;
+}
+.badgeToken {
+    background-color: #9c42f5
+}
+
+.playlistTitle {
+    height: 28px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    color: var(--color-primary);
+    transition: color 0.3s ease-in-out;
+}
+
+.artist {
+    display: inline-block;
+    margin-left: 8px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.71;
+    background-color: var(--bg-primary);
+    color: var(--color-subtitle);
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+.username {
+    height: 24px;
+    font-size: 14px;
+    line-height: 1.71;
+    font-weight: 600;
+    color: var(--color-subtitle);
+    /* margin-bottom: 28px; */
+}
+
+.bottomRowContainer {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* CHECK */
+.bottom-row-container button:not(:first-of-type):not(:last-of-type) {
+    margin-right:24px;
+}
+
+.bottom-row-container button.active {
+    color: #00b8b9 !important;
+    background-color: transparent !important;
+}
+
+.playlistToken {
+    height: 48px;
+    width: 100%;
+    border-width: 0;
+    border-bottom: 1px solid rgba(224, 224, 255, 0.06);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.trackNumber {
+    width: 12px;
+    height: 24px;
+    margin-right: 24px;
+    font-family: Gilroy;
+    font-size: 16px;  
+    line-height: 1.5;  
+    text-align: right;
+    color: var(--color-subtitle);
+}
+.trackTitle {
+    flex-grow: 1;
+    height: 28px;  
+    font-size: 16px;
+    line-height: 1.75;  
+    color: var(--color-primary);
+}
+.trackDuration {
+    width: 30px;
+    height: 24px;  
+    font-family: Gilroy;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.71;
+    text-align: left;
+    color: var(--color-subtitle);
+}
+.playlistViewMore {
+    height: 48px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: var(--bg-primary);
+    text-align: center;
+    vertical-align: center;
+    border: none;
+
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--color-primary);
+}
+
+@media only screen 
+  and (max-width: 768px) { 
+    .badge {
+        font-size: 12px;
+    }
+
+    .playlistTitle {
+        height: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.4px;
+    }
+
+    .playlistArt {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        margin-right: 24px;
+    }
+
+    .cardContainer {
+        margin-left: 24px;
+        margin-right: 24px;
+
+    }
+    .metaContainer {
+        margin-bottom: 0;
+    }
+    .trackNumber {
+        height: 20px;
+        font-size: 12px;  
+    }
+    .trackTitle {
+        height: 20px;  
+        font-size: 12px;
+    }
+    .trackDuration {
+        height: 20px;  
+        font-size: 12px;       
+    }
+    .playlistViewMore {
+        height: 48px;
+        width: 100%;
+        border-radius: 12px;
+        background-color: var(--bg-primary);
+        text-align: center;
+        vertical-align: center;
+        border: none;
+        font-size: 12px;
+        line-height: 1.75;
+        color: var(--color-primary);
+    }
+}

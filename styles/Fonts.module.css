@@ -1,0 +1,19 @@
+  .mont{
+    font-family: 'Montserrat';
+    font-weight: 600;
+  }
+
+  .druk {
+    font-family: 'Druk';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+
+  .gilroy {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+  }

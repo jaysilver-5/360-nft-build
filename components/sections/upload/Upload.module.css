@@ -1,0 +1,18 @@
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 30px;
+    background-image: var(--bg-image-primary);
+    box-shadow: var(--box-shadow-primary);
+    min-width: 700px;
+    min-height: 350px;
+    max-height: 900px;
+}
+
+.container{
+    margin: 20px;
+}

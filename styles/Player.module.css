@@ -1,0 +1,52 @@
+.mediaContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;    
+    border-radius: 24px;
+    box-shadow: var(--box-shadow-primary-inverse);
+    background-image: var(--bg-image-primary-inverse);
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.scrubber {
+    width: 100%;
+    position: relative;
+}
+
+.progressBar {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow-secondary);
+    background-image: var(--bg-image-secondary);
+}
+
+.progressBarFill {
+    display: block;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #00b8b9;
+}
+
+.playhead {
+    position:absolute;
+    top: -8px;
+    width: 24px;
+    height: 24px;  
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-tertiary);
+    background-image: var(--bg-image-tertiary);
+}
+
+@media only screen 
+  and (max-width: 768px) { 
+    .mediaContainer {
+        margin-bottom: 55px;
+    }
+}

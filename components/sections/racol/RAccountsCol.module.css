@@ -1,0 +1,32 @@
+.columnContainer{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative
+}
+
+.columnChild{
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    padding:0 230px
+}
+
+
+@media only screen 
+  and (max-width: 768px) { 
+    .columnContainer {
+      width: 100% !important;
+      height: 100vh;
+      margin: 0 10px;
+    }
+
+    .columnChild{
+        display: flex; 
+        flex-direction: column; 
+        align-items: flex-start; 
+        justify-content: flex-start; 
+        padding:0 50px
+    }
+}

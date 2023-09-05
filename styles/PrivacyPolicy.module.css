@@ -1,0 +1,24 @@
+.container{
+    padding: 0 48px 48px;
+}
+
+.container h1{
+    color: var(--color-alternate);
+    padding-top: 48px;
+}
+
+.container p{
+    color: var(--color-primary);
+}
+
+.container h2{
+    color: var(--color-secondary);
+}
+
+.container h3{
+    color: var(--color-subtitle);
+}
+
+.container li{
+    color: var(--color-primary);
+}

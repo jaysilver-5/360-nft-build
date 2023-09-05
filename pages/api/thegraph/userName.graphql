@@ -1,0 +1,59 @@
+@public
+collection UserName {
+  # // id is mandatory on all collections and must be unique
+  id: string;
+  @delegate
+  @read 
+  publicKey: PublicKey;
+  # // name is defined as required
+  fullName: string;
+  # // age is defined as optional
+  username: string;
+  email: string;
+  password: string;
+  phone: string;
+  posts: [Post] @relation(name:UserPosts); # // One-to-many relationship
+  comments: [Comment] @relation(name:UserComments); # // One-to-many relationship
+  likes: [Like] @relation(name:UserLikes); # // One-to-many relationship
+  follows: [Follow] @relation(name:UserFollows); # // One-to-many relationship
+  followers: [Follow] @relation(name:UserFollowers); # // One-to-many relationship
+  messages: [Message] @relation(name:UserMessages); # // One-to-many relationship
+  chats: [Chat] @relation(name:UserChats); # // One-to-many relationship
+  notifications: [Notification] @relation(name:UserNotifications); # // One-to-many relationship
+  # // The constructor is optional, but if it is defined, it must
+  constructor (
+    id: string, 
+    fullName: string,
+    username: string,
+    email: string,
+    password: string,
+    phone: string,
+    posts: [Post],
+    comments: [Comment],
+    likes: [Like],
+    follows: [Follow],
+    followers: [Follow],
+    messages: [Message],
+    chats: [Chat],
+    notifications: [Notification]
+    ) {
+    this.id = id;
+    this.fullName = name;
+    this.username = uname;
+    this.email = email;
+    this.password = password;
+    this.phone = phone;
+    this.posts = posts;
+    this.comments = comments;
+    this.likes = likes;
+    this.follows = follows;
+    this.followers = followers;
+    this.messages = messages;
+    this.chats = chats;
+    this.notifications = notifications;
+  }
+
+  # // Only required for multi-field indexes, as each field is
+  # // automatically indexed
+  @index(name, uname, email, phone, password, phone, @unique);
+}

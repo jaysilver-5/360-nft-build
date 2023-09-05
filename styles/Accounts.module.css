@@ -1,0 +1,75 @@
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.buttonsContainerMobile {
+    display: block;
+}
+
+.labelWithFloat {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.forgotPassword {
+    height: 16px;
+    font-family: "Montserrat";
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.23;  
+    text-align: right;
+    text-decoration: none;
+}
+
+.footerRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    width: 100%;
+}
+
+.footerLeft {
+    font-family: "Montserrat";
+    font-size: 14px;
+    line-height: 1.71;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.footerLeft p {
+    margin-right: 4px;
+    font-weight: 500;
+}
+.footerLeft a {
+    font-weight: 600;
+    text-decoration: none;
+}
+.footerRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+@media only screen 
+  and (max-width: 768px) { 
+    .footerRow {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:flex-start;
+        height: 48px;
+        width: 100%;
+    }
+  }

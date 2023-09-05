@@ -1,0 +1,21 @@
+.footerContainer{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+    align-items: center; 
+    height: 48px; 
+    padding: 0 230px; 
+    position: absolute; 
+    bottom: 0; right: 0; 
+    font-size: 14px; 
+    font-weight: 500
+}
+
+@media only screen 
+  and (max-width: 768px) { 
+    
+    .footerContainer{
+        padding: 0 50px; 
+    }
+
+}
