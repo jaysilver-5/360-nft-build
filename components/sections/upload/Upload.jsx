@@ -1,6 +1,6 @@
 import React from 'react'
 import { ethers } from 'ethers';
-import ipfsClient, { create } from 'ipfs-http-client';
+// import ipfsClient, { create } from 'ipfs-http-client';
 // import { createClient } from '@supabase/supabase-js';
 import { useState, useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
