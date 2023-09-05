@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 const defaults = { file: {}, tokenAlbumArt: {}, tokenName: '', tokenDesc: '', tokenUri: '', tokenPrice: '', tokenArtist: '', tokenUri: ''}
 export const uploadSlice = createSlice({
     name: 'upload',
