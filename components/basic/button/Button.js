@@ -39,18 +39,18 @@ const Button = ({ id, text, bg, iconClass, href, iconOpacity, type, isLink, isOu
         <>
         {isLink ? <Link href={href}>
                     {isDropdownButton ?
-                        <a className={`dropdown-item disableHover ${main}`} style={{textDecoration: 'none', marginRight: marginRight}}>
+                        <p className={`dropdown-item disableHover ${main}`} style={{textDecoration: 'none', marginRight: marginRight}}>
                                 {iconClass && <div className={`${iconClass} ${icx}`} style={{width: '24px', height:'24px'}}/>}
                                 {text}
                                 {children}
-                        </a> :  
-                        <a style={{textDecoration: 'none', marginRight: marginRight}}>
+                        </p> :  
+                        <p style={{textDecoration: 'none', marginRight: marginRight}}>
                             <button className={main}>
                                 {iconClass && <div className={`${iconClass} ${icx}`}  style={{width: '24px', height:'24px'}}/>}
                                 {text}
                                 {children}
                             </button>
-                        </a>
+                        </p>
                     }
                 </Link> :
                 <button id={id} className={`${main}  ${isDropdownButton && 'dropdown-item'}`} style={{marginRight: marginRight}} onClick={onClick} aria-label={ariaLabel} title={title} disabled={disabled}>

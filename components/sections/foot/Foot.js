@@ -6,7 +6,7 @@ const Foot = ( {position} ) => {
     return (
             <div style={{position: position}} className={`color-subtitle ${fonts.mont} ${styles.footerContainer}`}>
                 <p>© 2023 360NFT</p>
-                <Link href='/privacypolicy'><a style={{textDecoration: 'none'}}>Terms &amp; conditions</a></Link>
+                <Link href='/privacypolicy'><p style={{textDecoration: 'none'}}>Terms &amp; conditions</p></Link>
             </div>
 
     )

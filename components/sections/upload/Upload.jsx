@@ -1,14 +1,9 @@
 import React from 'react'
 import { ethers } from 'ethers';
-// import ipfsClient, { create } from 'ipfs-http-client';
-// import { createClient } from '@supabase/supabase-js';
 import { useState, useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { ZDK } from "@zoralabs/zdk";
 import { Strategies, Networks, useNFT, MediaFetchAgent } from '@zoralabs/nft-hooks';
-// import { ZoraTestnet } from "@thirdweb-dev/chains";
-// import { ThirdwebSDK } from "@thirdweb-dev/sdk";
-// import  Create  from '/upload/Create.js'
 import styles from './Upload.module.css'
 import Label from '../../basic/label/Label'
 import Textbox from '../../basic/textbox/Textbox'
@@ -25,20 +20,6 @@ const API_ENDPOINT = "https://api.zora.co/graphql";
 const zdk = new ZDK({ endpoint: API_ENDPOINT }); // Defaults to Ethereum Mainnet
 
 const marketplace = zdk.marketplace;
-// // const fetchAgent = new Strategies.ZDKFetchStrategy(Networks.ZoraTestnet);
-// (async () => {
-//     // Get metadata result from the server
-//     const metadataResult = await fetchAgent.fetchIPFSMetadata('https://ipfs.io/ipfs/METADATA_HASH');
-//     // metadataResult type is {metadata}
-  
-//     // Get NFT result from the server
-//     const nftResult = await fetchAgent.fetchNFT(
-//       '0x8d04a8c79ceb0889bdd12acdf3fa9d207ed3ff63',
-//       '2'
-//     );
-  
-
-  
 
 const Upload = ( { hideModal }) => {
 
@@ -66,11 +47,6 @@ const Upload = ( { hideModal }) => {
     const chainId = useRef()
     const TOKEN_CONTRACT_ADDRESS = useRef()
     const MARKETPLACE_CONTRACT_ADDRESS = useRef()
-
-    // useEffect(() => {
-    //     enableWeb3()
-    //     ofd()
-    // }, [])
 
     function handleFileSelect(e) {
         const file = e.target.files[0]
@@ -252,17 +228,6 @@ const Upload = ( { hideModal }) => {
         return contract.methods.addItemToMarket(contractAddress, tokenId, ipfs.Units.ETH(price))
     }
 
-
-
-    // const uploadNFT = async () => {
-    //     // let contractAddress = 0x3d27dc56c8946401f82f286467c409b77fb9cdd6;
-    //     // let tokenId = 1;
-    //     // let price = 0.01;
-    //     // const transaction = createDirectListing(contractAddress, tokenId, price);
-    //     const receipt = await transaction.sendTransaction();
-    //     console.log(receipt);
-    // }
-
     const { data, error, loading } = useNFT({
         tokenId: 1,
         contractAddress: '0x3d27dc56c8946401f82f286467c409b77fb9cdd6',
@@ -276,7 +241,7 @@ const Upload = ( { hideModal }) => {
     return (
             <div className={styles.main}>
                 { isUploading ? 
-                    <div>
+                    <div className='fixed top-0 left-0 z-50 bg-cover min-h-screen right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-75'>
                         <div className={`centerDivItems ${styles.container}`}>
                             <h2 className={`color-primary ${fonts.mont}`} style={{fontWeight: 300, paddingTop: '50px'}}>{uploadStatus}</h2>
                         </div>
@@ -292,13 +257,13 @@ const Upload = ( { hideModal }) => {
                                 <div style={{margin: 20}}>
                                     <h6>
                                         <Link href={ipfsLink}>
-                                            <a className='color-alternate' style={{textDecoration: 'none'}}>View on IPFS</a>
+                                            <p className='color-alternate' style={{textDecoration: 'none'}}>View on IPFS</p>
                                         </Link>
                                     </h6>
                                     <br />
                                     <h6>
                                         <Link href={metadataLink}>
-                                            <a className='color-alternate' style={{textDecoration: 'none'}}>View Metadata</a>
+                                            <p className='color-alternate' style={{textDecoration: 'none'}}>View Metadata</p>
                                         </Link>
                                     </h6>
                                     <br />
@@ -317,22 +282,27 @@ const Upload = ( { hideModal }) => {
                             </div>
                             :
                             <div>
-                                <h1 className={`color-primary ${fonts.mont}`} style={{fontWeight: 300, paddingTop: '50px'}}>Upload</h1>
+                                <h1 className=''>Upload</h1>
                                 <div className='hide-scroll' style={{overflow: 'auto'}}>
-                                    <Label>NFT Name</Label>
-                                    <Textbox toDispatch={setTokenName}/>
+                                    <div className='flex gap-x-4'>
+                                        <div className='w-full flex-1'>
+                                            <Label className='text-[68px]'>NFT Name</Label>
+                                            <Textbox toDispatch={setTokenName}/>
+                                        </div>
+                                        <div className='w-full flex-1'>
+                                            <Label>Artist Name</Label>
+                                            <Textbox toDispatch={setTokenArtist}/>
+                                        </div>
+                                    </div>
                                     <Label>NFT Description</Label>
-                                    {/* <Textbox toDispatch={setTokenDesc}/> */}
                                     <TextArea toDispatch={setTokenDesc}/>
-                                    <Label>Artist Name</Label>
-                                    <Textbox toDispatch={setTokenArtist}/>
                                     <Label>Price</Label>
                                     <Textbox toDispatch={setTokenPrice}/>
                                     <Label>Song Metadata Uri</Label>
                                     <Textbox toDispatch={setTokenUri}/>
-                                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}} className='mt-8'>
                                         <Button text='Cancel' onClick={hideModal} marginRight='24px' bg='dark'/>
-                                        {/* <Button text='Upload' onClick={uploadNFT}/> */}
+                                        <Button text='Upload' bg='dark'/>
                                         <small style={{paddingLeft: '30px'}} className='color-primary'>{fileSelected && (fileName.name.length >= 10 ? `${fileName.name.substr(0, 5)}...${fileName.name.substr(fileName.name.length - 5)}` : fileName.name)}</small>
                                         {fileSelected && <Button text='Change' type='small' onClick={ofd}/>}
                                         {(musicSelected || modelSelected) && (<small className='color-primary'>|</small>)}
@@ -355,51 +325,3 @@ const Upload = ( { hideModal }) => {
         }
 
 export default Upload
-  
-    // const sendUserSKETH = async () => {
-    //     web3.eth.accounts.signTransaction({
-    //         to: walletAddress,
-    //         value: '10000000000000000',
-    //         gas: 2000000,
-    //         gasPrice: '234567897654321',
-    //         nonce: 0,
-    //         chainId: 19877346431401
-    //     }, '0x88e5ba18fd33e01cab2ea3a16843971ab01e2a13a71ac0fe149b7627e3a7b52e')
-    // }
-
-    // const switchNetworkToSKALE = async () => {
-    //     await ipfs.getChainId().then( async (data) => {
-    //         chainId.current = data
-    //         if (chainId.current === 1175159915491121)
-    //             return
-    //         else {
-    //             await ipfs.switchNetwork(1175159915491121).then(() => {
-    //                 showNotification({type: 'success', message: 'You are now on the Trapchain Network!'})
-    //             })
-    //             .catch(async(error) => {
-    //                 if (error.code == 4001)
-    //                     showNotification({type: 'error', message: error.message})
-    //                 else{
-    //                     const chainId = 0x42CCD3D512F31;
-    //                     const chainName = 'Trapchain | ZORA Network';
-    //                     const currencyName = 'ZORA ETH';
-    //                     const currencySymbol = 'skETH';
-    //                     const rpcUrl = 'https://mainnet-api.skalenodes.com/v1/dazzling-gomeisa';
-    //                     const blockExplorerUrl = 'https://dazzling-gomeisa.explorer.mainnet.skalenodes.com';
-
-
-                        // await ipfs.addNetwork(
-                        //     chainId, 
-                        //     chainName, 
-                        //     currencyName, 
-                        //     currencySymbol, 
-                        //     rpcUrl,
-                        //     blockExplorerUrl
-                        // );
-                //     }
-                // })                      
-    //         }
-    //     })
-        
-    // }
-   

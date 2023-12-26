@@ -35,7 +35,7 @@ const Signout = () => {
                             <div className={styles.footerRow}>
                                 <div className={styles.footerLeft}>
                                     <p className='color-subtitle'>Have another option?</p>
-                                    <Link href='/accounts/email'><a className='color-secondary'>Change Email</a></Link>
+                                    <Link href='/accounts/email'><p className='color-secondary'>Change Email</p></Link>
                                 </div>
                                 <div className={styles.footerRight}>
                                     <input type='hidden' name='{{ redirect_field_name }}' value='{{ redirect_field_value }}'/>

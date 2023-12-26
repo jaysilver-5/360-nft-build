@@ -66,7 +66,7 @@ export default function Home() {
                           360NFT is currently invite-only
                           <br/>
                           <span>
-                            Here&apos;s how to <Link href='/'><a className='color-alternate' style={{textDecoration: 'none'}}> skip the waitlist now</a></Link>
+                            Here&apos;s how to <Link href='/'><p className='color-alternate' style={{textDecoration: 'none'}}> skip the waitlist now</p></Link>
                           </span>
                         </span>
                         <br/>
