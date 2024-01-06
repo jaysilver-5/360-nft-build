@@ -1,31 +1,30 @@
-import Layout from '../components/Layout'
-import FeedCard from '../components/cards/feed/FeedCard'
-import Player from '../components/Player'
-import ProfileProgress from '../components/cards/profile-progress/ProfileProgress'
-import Logo from '../components/basic/Logo'
-import Toolbox from '../components/sections/toolbox/Toolbox'
-import User from '../components/sections/user/User'
-import Menu from '../components/sections/menu/Menu'
-import Suggestions from '../components/sections/suggestions/Suggestions'
-import AddToken from '../components/cards/addtoken/AddToken'
-import Button from '../components/basic/button/Button'
-import Upload from '../components/sections/upload/Upload'
-import styles from '../styles/Playlists.module.css'
-import fonts from '../styles/Fonts.module.css'
-import { feedData, suggestions } from '../public/common/items'
-import { useMediaQuery } from 'react-responsive'
 import { useState, useEffect } from 'react'
-// import { useMoralis, useMoralisCloudFunction } from 'react-moralis'
 import { useSelector, useDispatch } from 'react-redux'
-import { setPic } from '../features/redux/user/user-slice'
+import { setPic } from '../../../features/redux/user/user-slice'
 import { Dropdown } from 'react-bootstrap'
-import MobileBottomNav from '../components/sections/mobileNav/MobileBottomNav'
-import MobileNav from '../components/sections/mobileNav/MobileNav'
+import { useMediaQuery } from 'react-responsive'
+import MobileBottomNav from '../../../components/sections/mobileNav/MobileBottomNav'
+import MobileNav from '../../../components/sections/mobileNav/MobileNav'
+import Layout from '../../../components/Layout'
+import FeedCard from '../../../components/cards/feed/FeedCard'
+import Player from '../../../components/Player'
+import ProfileProgress from '../../../components/cards/profile-progress/ProfileProgress'
+import Logo from '../../../components/basic/Logo'
+import Toolbox from '../../../components/sections/toolbox/Toolbox'
+import User from '../../../components/sections/user/User'
+import Menu from '../../../components/sections/menu/Menu'
+import Suggestions from '../../../components/sections/suggestions/Suggestions'
+import AddToken from '../../../components/cards/addtoken/AddToken'
+import Button from '../../../components/basic/button/Button'
+import Upload from '../../../components/sections/upload/Upload'
+import styles from '../../../styles/Playlists.module.css'
+import fonts from '../../../styles/Fonts.module.css'
+import { suggestions } from '../../../public/common/items'
 
+const Profile = () => {
 
-const UserProfile = () => {
     const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
-
+    const data = ''; 
     const name = useSelector(state => state.user.name)
     const uName = '@' + useSelector(state => state.user.uname)
     const uPic = useSelector(state => state.user.upic)
@@ -42,36 +41,6 @@ const UserProfile = () => {
 
     // const { Moralis } = useMoralis()
     // const { data, error, isLoading, fetch } = useMoralisCloudFunction('getUserItems')
-    const data = feedData
-    const suggestionsData = suggestions
-    const [showAddToken, setShowAddToken] = useState(false)
-    const [showUpload, setShowUpload] = useState(false)
-    const [showMoreOptions, setShowMoreOptions] = useState(false)
-    const [showEditProfile, setShowEditProfile] = useState(false)
-    const [showEditCover, setShowEditCover] = useState(false)
-    const [showEditAvatar, setShowEditAvatar] = useState(false)
-    const [showEditName, setShowEditName] = useState(false)
-    const [showEditUsername, setShowEditUsername] = useState(false)
-    const [showEditBio, setShowEditBio] = useState(false)
-    const [showEditEmail, setShowEditEmail] = useState(false)
-    const [showEditPassword, setShowEditPassword] = useState(false)
-    const [showEditSocials, setShowEditSocials] = useState(false)
-    const [showEditWebsite, setShowEditWebsite] = useState(false)
-    // const { data: itemsForSale, fetch: fetchItemsForSale } = useMoralisCloudFunction('getItemsForSale')
-    const itemsForSale = []
-    const [chainId, setChainId] = useState(null)
-    const [UserClass, setUserClass] = useState(null)
-    const [query, setQuery] = useState(null)
-    const [results, setResults] = useState(null)
-    const [user, setUser] = useState(null)
-    const [objId, setObjId] = useState(null)
-    const [userObj, setUserObj] = useState(null)
-    const [avatarFile, setAvatarFile] = useState(null)
-    const [coverFile, setCoverFile] = useState(null)
-    const [userAvatar, setUserAvatar] = useState(null)
-    const [userCover, setUserCover] = useState(null)
-    const [userEmail, setUserEmail] = useState(null)
-    // console.table(itemsForSale);
 
     const [openUploadModal, setUploadModal] = useState(false)
 
@@ -89,12 +58,12 @@ const UserProfile = () => {
         const results = await query.find()
         const user = JSON.parse(JSON.stringify(results))
         const objId = (user[0].objectId)
-        const userObj = await new Moralis.Query(UserClass).get(objId)
+        // const userObj = await new Moralis.Query(UserClass).get(objId)
         userObj.set('avatar', avatarFile)
         await userObj.save()
         setAvatarSelected(file)
         setAvatarUploading(false)
-        dispatch(setPic(avatarFile?._url))
+        // dispatch(setPic(avatarFile?._url))
         }
         catch{
             setAvatarUploading(false)
@@ -102,9 +71,8 @@ const UserProfile = () => {
     }
 
     const handleCoverSelect = async (e) => {
-        // const chainId = await Moralis.getChainId()
-        const chainId = 999
-        console.log('chain', chainId); //999 ZORA
+        const chainId = await Moralis.getChainId()
+        console.log('chain', chainId); // 56
     }
 
     return (
@@ -152,7 +120,7 @@ const UserProfile = () => {
 
                 <div className={styles.bottomLeft}>
                     <Menu/>
-                    <ProfileProgress done='50'/>
+                    {/* <ProfileProgress done='50'/> */}
                 </div>
 
                 <div className={styles.bottomCenter}>
@@ -207,22 +175,22 @@ const UserProfile = () => {
                 <div className={styles.bottomRight}>
                     <div className='subscription-grid'>
                         <a className='grid-item locked'>
-                            <img src='https://ipfs.io/ipfs/QmVfF5KrArmTttc4jdg8Xzaa6xvHX2Mgcks3DvfWGestuR'/>
+                            <img src='https://ipfs.io/ipfs/QmaMqNLgthC82tEvtJi9b5crbiHCmAw2jVGLQhzLWg24jz'/>
                         </a>
                         <a className='grid-item locked'>
-                            <img src='https://ipfs.io/ipfs/QmS3rtQjbYR39myCr8f1JS8f5RC7JGP8o3svqtWpibSsm8'/>
+                            <img src='https://ipfs.io/ipfs/QmekzNWUg4a2HQduHv9wq3vbiyRWBVUdrVzbDuWwied7sN'/>
                         </a>
                         <a className='grid-item'>
                             <img src='https://ipfs.io/ipfs/QmYPP9YPaxp18j5HKVN2mwEqjmpaZvhCX1bgqvX4LGsfYp'/>
                         </a>
                         <a className='grid-item'>
-                            <img src='https://ipfs.io/ipfs/QmdusuNQxHyBn2vnhRpvDwrfbxzz9Z1DdkNyBgYUXXDVBT'/>
+                            <img src='https://ipfs.io/ipfs/QmZHvB7CV3Y8Azzq6tR6Ztu8jtbqB3TJbLhPzMPQSW9o9J'/>
                         </a>
                         <a className='grid-item'>
-                            <img src='https://ipfs.io/ipfs/QmedGWqsuS1bAyye5V7m41TJH6SYbbWH3brpHGzC1J6C6z'/>
+                            <img src='https://ipfs.io/ipfs/QmYQmDEf3kMBfrd3MbPhEVhYXVwMQ88BqnpD6RAVx9HY71'/>
                         </a>
                         <a className='grid-item'>
-                            <img src='https://ipfs.io/ipfs/QmPSRpzv5151rkpUqi1iiqTE9frWKA9SrWNWNBZNik21DG'/>
+                            <img src='https://ipfs.io/ipfs/QmS3rtQjbYR39myCr8f1JS8f5RC7JGP8o3svqtWpibSsm8'/>
                         </a>
                     </div>
                     <span className={styles.subHeader}>You might like</span>
@@ -237,7 +205,6 @@ const UserProfile = () => {
                     </div>
                 }     
             </div>
-
             }
             <form style={{display: 'none'}}>
                 <input type='file' id='fileDialogPic' onChange={handleFileSelect} accept='image/jpeg, image/png, image/video/mp4, image/gif, audio/*'/>
@@ -247,4 +214,7 @@ const UserProfile = () => {
     )
 }
 
-export default UserProfile
+export default Profile
+
+//<Button text='Subscribe' bg="greenToPurple" spread='gradient'/>
+

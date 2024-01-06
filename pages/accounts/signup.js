@@ -20,6 +20,7 @@ const Signup = () => {
     const [fullname, setFullname] = useState('')
     const [username, setUsername] = useState('')
     const [validationError, setValidationError] = useState('')
+    const data = ''
 
     // const { fetch, data, error } = useMoralisCloudFunction('usernameAlreadyExists', { uname: username }, { autoFetch: false })
 
@@ -84,10 +85,18 @@ const Signup = () => {
                             FOR
                             <span className={`color-accent-orange ${fonts.gilroy}`}> 360 </span>NFT 
                         </h1>
-                        <Label>Full Name</Label>
-                        <Textbox type='text' onChange={e => setFullname(e.target.value)}/>
-                        <Label>Username</Label>
+                        <div className='w-full flex items-center justify-center'>
+                          <button style={{border: '1px dashed black'}} className='w-24 h-24 border-1 border-dashed rounded-full border-[#000] flex items-center justify-center text-center'>
+                            <div>
+                              <p className='text-[8px] font-thin text-[#00000040]'>Choose<br/>Avatar</p>
+                            </div>
+                          </button>
+                        </div>
+                        {/* <Label>Full Name</Label>
+                        <Textbox type='text' onChange={e => setFullname(e.target.value)}/> */}
+                        <Label>username/artist name</Label>
                         <Textbox type='text' onChange={e => setUsername(e.target.value)}/>
+                        <div className='mt-4'></div>
                         <Button onClick={createAccount} text='Create My Account' bg='orangeToPink'/>
                     </>
                 </RAccountsCol>

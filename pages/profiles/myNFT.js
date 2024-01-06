@@ -1,7 +1,21 @@
 import { useNFT, useNFTMetadata } from '@zoralabs/nft-hooks'
 
 const MyNFT = () => {
-  const { data } = useNFT('0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7', '20')
+  // const { data } = useNFT('0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7', '20')
+  const data = {
+    metadata: [
+      {
+        name: '',
+      }
+    ],
+    nft: [
+      {
+        owner: {
+          address: ''
+        }
+      }
+    ]
+  }
 
   return (
     <div>

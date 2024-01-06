@@ -24,7 +24,7 @@ import { suggestions } from '../../public/common/items'
 const Profile = () => {
 
     const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
-
+    const data = ''; 
     const name = useSelector(state => state.user.name)
     const uName = '@' + useSelector(state => state.user.uname)
     const uPic = useSelector(state => state.user.upic)

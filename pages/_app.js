@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import { AuthProvider } from '../context/AuthContext';
 import 'bootstrap/dist/css/bootstrap.css';
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
@@ -22,20 +23,22 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <NotificationProvider>
-          <Head>
-            {/* Include the Tailwind CSS CDN link */}
-            <link
-              href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-              rel="stylesheet"
-            />
-          </Head>
-          <Component {...pageProps} />
-        </NotificationProvider>
-      </PersistGate>
-    </Provider>
+    <AuthProvider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <NotificationProvider>
+            <Head>
+              {/* Include the Tailwind CSS CDN link */}
+              <link
+                href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+                rel="stylesheet"
+              />
+            </Head>
+            <Component {...pageProps} />
+          </NotificationProvider>
+        </PersistGate>
+      </Provider>
+    </AuthProvider>
   );
 }
 

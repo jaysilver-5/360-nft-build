@@ -1,26 +1,26 @@
 import { useState, useEffect, useRef } from 'react'
 // import { useMoralisCloudFunction } from 'react-moralis'
 import { useSelector } from 'react-redux'
-import Layout from '../components/Layout'
-import FeedCard from '../components/cards/feed/FeedCard'
-import Player from '../components/Player'
-import ProfileProgress from '../components/cards/profile-progress/ProfileProgress'
-import Logo from '../components/basic/Logo'
-import Toolbox from '../components/sections/toolbox/Toolbox'
-import User from '../components/sections/user/User'
-import Menu from '../components/sections/menu/Menu'
-import Suggestions from '../components/sections/suggestions/Suggestions'
-import Toggle from '../components/basic/toggle/Toggle'
-import PopOver from '../components/basic/popover/PopOver'
-import AddToken from '../components/cards/addtoken/AddToken'
-import styles from '../styles/Playlists.module.css'
-import fonts from '../styles/Fonts.module.css'
-import Upload from '../components/sections/upload/Upload'
-import Loader from '../components/basic/loader/Loader'
-import MobileBottomNav from '../components/sections/mobileNav/MobileBottomNav'
-import MobileNav from '../components/sections/mobileNav/MobileNav'
+import Layout from '../../../components/Layout'
+import FeedCard from '../../../components/cards/feed/FeedCard'
+import Player from '../../../components/Player'
+import ProfileProgress from '../../../components/cards/profile-progress/ProfileProgress'
+import Logo from '../../../components/basic/Logo'
+import Toolbox from '../../../components/sections/toolbox/Toolbox'
+import User from '../../../components/sections/user/User'
+import Menu from '../../../components/sections/menu/Menu'
+import Suggestions from '../../../components/sections/suggestions/Suggestions'
+import Toggle from '../../../components/basic/toggle/Toggle'
+import PopOver from '../../../components/basic/popover/PopOver'
+import AddToken from '../../../components/cards/addtoken/AddToken'
+import styles from '../../../styles/Playlists.module.css'
+import fonts from '../../../styles/Fonts.module.css'
+import Upload from '../../../components/sections/upload/Upload'
+import Loader from '../../../components/basic/loader/Loader'
+import MobileBottomNav from '../../../components/sections/mobileNav/MobileBottomNav'
+import MobileNav from '../../../components/sections/mobileNav/MobileNav'
 import { useMediaQuery } from 'react-responsive'
-import { waveItems } from '../public/common/items'
+import { waveItems } from '../../../public/common/items'
 
 
 
@@ -32,10 +32,6 @@ const Explore = () => {
     const [filterValue, setFilterValue] = useState('All')
     const [filteredData, setFilteredData] = useState(feedData);
     const [currentSearch, setcurrentSearch] = useState();
-    // const { data: feedData, error, isLoading, fetch } = useMoralisCloudFunction('getAllItems')
-    // const { data: itemsForSale, fetch: fetchItemsForSale } = useMoralisCloudFunction('getItemsForSale')
-    // console.log(itemsForSale);
-    // console.log(feedData);
 
     useEffect(() => {
         handleSearch(currentSearch)
@@ -107,7 +103,7 @@ const Explore = () => {
 
                     <div className={styles.bottomLeft}>
                         <Menu/>
-                        <ProfileProgress done='50'/>
+                        {/* <ProfileProgress done='50'/> */}
                     </div>
 
                     <div className={styles.bottomCenter}>

@@ -32,10 +32,6 @@ const Menu = () => {
 
     return (
         <div className={fonts.mont}>
-            <Accordion defaultActiveKey='0' flush>
-                <Accordion.Item eventKey='0'>
-                  <Accordion.Header><h4 className={styles.Header}>Discover</h4></Accordion.Header>
-                  <Accordion.Body>
                     <ul  id='menuList' className={styles.ul}>
                           <li className={`${styles.menuItem} ${(currentSelection === 0) && styles.activeMenu}`}>
                               <Button onClick={() => {
@@ -52,40 +48,38 @@ const Menu = () => {
                           <li className={`${styles.menuItem} ${(currentSelection === 2) && styles.activeMenu}`}>
                               <Button onClick={() => {
                                         setCurrentSelection(2)
-                                        router.push('/explore')
+                                        router.push('/[id]/explore')
                                     }} type='tertiary' iconOpacity={1} text={<span style={{fontWeight: 600}}>Explore</span>} iconClass='icon-explore'/>              
                           </li>
                           <li className={`${styles.menuItem} ${(currentSelection === 3) && styles.activeMenu}`}>
                               <Button onClick={() => {
                                         setCurrentSelection(3)
-                                        router.push('/profiles/my')
+                                        router.push('/[id]/profile')
                                     }} type='tertiary' iconOpacity={1} text={<span style={{fontWeight: 600}}>Profile</span>} iconClass='icon-user'/>              
                           </li>
                     </ul>
-                </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey='1'>
+
+                {/* <Accordion.Item eventKey='1'>
                   <Accordion.Header><h4 className={styles.Header}>Library</h4></Accordion.Header>
-                  <Accordion.Body>
+                  <Accordion.Body> */}
                     <ul className={styles.ul}>
-                      <li className={styles.menuItem}>
+                      {/* <li className={styles.menuItem}>
                           <Button type='tertiary' iconOpacity={1} text={<span style={{fontWeight: 600}}>Favorites</span>} iconClass='icon-favorite-border'/>              
-                      </li>
-                      <li className={styles.menuItem}>
+                      </li> */}
+                      {/* <li className={styles.menuItem}>
                           <Button type='tertiary' iconOpacity={1} text={<span style={{fontWeight: 600}}>History</span>} iconClass='icon-history'/>              
-                      </li>
+                      </li> */}
                     </ul>
-                  </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey='2'>
+                   {/* </Accordion.Body>
+                </Accordion.Item> */}
+                 {/* <Accordion.Item eventKey='2'>
                   <Accordion.Header><h4 className={styles.Header}>Playlists</h4></Accordion.Header>
                   <Accordion.Body>
                   <Button type='tertiary' iconOpacity={1} text={<span className='color-subtitle' style={{fontWeight: 600}}>Create your first playlist!</span>} iconClass='icon-plus'/>              
                   <ul>
                   </ul>
                   </Accordion.Body>
-                </Accordion.Item>
-            </Accordion>
+                </Accordion.Item>  */}
         </div>
     )
 }

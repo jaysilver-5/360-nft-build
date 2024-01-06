@@ -52,9 +52,9 @@ export default function Home() {
                         <div className={styles.buttons}>
                           <ThemeButton/>
                           <span className='margin-right-wide'></span>
-                          <Button isLink={1} href='/feed' bg='dark' text='Claim Drop'/>
+                          <Button isLink={1} href='/accounts/signup' bg='dark' text='Sign Up'/>
                           <span className='margin-right-wide'></span>
-                          <Button isLink={1} href='/signin' bg='greenToPurple' spread='gradient' text='Login'/>
+                          <Button isLink={1} href='/accounts/signin' bg='greenToPurple' spread='gradient' text='Login'/>
                           
                         </div>
                     </div>

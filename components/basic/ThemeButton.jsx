@@ -16,7 +16,7 @@ const ThemeButton = () => {
     }, [activeTheme]);
 
     return (
-        <Button bg='toggle' onClick={() => setActiveTheme(inactiveTheme)} type='secondary' iconClass='icon-moon' ariaLabel={`Change to ${inactiveTheme} mode`} title={`Change to ${inactiveTheme} mode`}/>
+      <Button bg='toggle' onClick={() => setActiveTheme(inactiveTheme)} type='secondary' iconClass='icon-moon' ariaLabel={`Change to ${inactiveTheme} mode`} title={`Change to ${inactiveTheme} mode`}/>
     )
 }
 
